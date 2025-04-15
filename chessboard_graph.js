@@ -4,7 +4,8 @@ function chessboardGraph() {
   const ranks = '12345678';
 
   const knightMoves = [
-    [1, 2], [2, 1], [2, -1], [1, -2], [-1, -2], [-2,-1], [-2, 1], [-1, 2],
+    [1, 2], [2, 1], [2, -1], [1, -2], 
+    [-1, -2], [-2,-1], [-2, 1], [-1, 2],
   ];
   
   const isValid = (x, y) => x >= 0 && x < 8 && y >= 0 && y < 8;
@@ -19,7 +20,7 @@ function chessboardGraph() {
         const ny = y + dy;
 
         if (isValid(nx, ny)) {
-          const target = `${files[nx]}${ranks[ny]}}`;
+          const target = `${files[nx]}${ranks[ny]}`;
           graph.get(square).push(target);
         }
       }
@@ -27,3 +28,5 @@ function chessboardGraph() {
   }
   return graph;
 }
+
+export { chessboardGraph }
