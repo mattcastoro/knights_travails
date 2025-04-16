@@ -9,7 +9,7 @@ function knightMoves(start, end) {
     const [current, path] = queue.shift();
 
     if (current === end) {
-      return path;
+      return console.log(`You made it in ${path.length - 1} moves! Here's your path: ${path}`);
     }
 
     visited.add(current);
